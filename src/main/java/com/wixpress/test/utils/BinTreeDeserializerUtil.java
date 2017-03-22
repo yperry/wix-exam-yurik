@@ -16,7 +16,7 @@ public class BinTreeDeserializerUtil {
         }
 
         if(!serializedString.contains(" $ ")) {
-            throw new BinTreeSerializationException();
+            throw new BinTreeSerializationException("Seems that we have incorrect serialized string");
         }
 
         StringTokenizer valTokens = new StringTokenizer(serializedString, delim);
@@ -27,7 +27,7 @@ public class BinTreeDeserializerUtil {
         return serializedString == null || serializedString.length() == 0;
     }
 
-    private static BinTree deserializeInternally(StringTokenizer valTokens) throws BinTreeSerializationException {
+    private static BinTree deserializeInternally(StringTokenizer valTokens) {
         if (!valTokens.hasMoreTokens()) {
             return null;
         }

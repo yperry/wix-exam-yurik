@@ -24,7 +24,7 @@ public class BinTreeSerializerUtil {
         }
 
         if(isAlreadyVisited(binTree, visitedElems)) {
-            throw new BinTreeSerializationException();
+            throw new BinTreeSerializationException("Detected cycle");
         }
 
         addToVisited(binTree, visitedElems);
