@@ -9,6 +9,6 @@ public class BinTreeSerializerUtilTest {
     @Test
     public void shouldSerializeCorrectlyWhenSimpleCasePassed() throws Exception {
         BinTree binTree = new BinTree("A");
-        assertEquals("A", BinTreeSerializerUtil.serialize(binTree));
+        assertEquals("A ", BinTreeSerializerUtil.serialize(binTree));
     }
 }
