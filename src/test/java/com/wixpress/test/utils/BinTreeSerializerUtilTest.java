@@ -1,6 +1,6 @@
-package com.wixpress.test.tree;
+package com.wixpress.test.utils;
 
-import com.wixpress.test.utils.BinTreeSerializerUtil;
+import com.wixpress.test.tree.BinTree;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
