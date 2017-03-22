@@ -12,12 +12,12 @@ public class BinTreeSerializerUtil {
 
     public static String serialize(BinTree binTree) throws BinTreeSerializationException {
         StringBuilder sb = new StringBuilder();
-        Set<String> visitedElems = new HashSet<String>();
+        Set<BinTree> visitedElems = new HashSet<BinTree>();
         serializeInternally(binTree, sb, visitedElems);
         return sb.toString();
     }
 
-    private static void serializeInternally(BinTree binTree, StringBuilder sb, Set<String> visitedElems) throws BinTreeSerializationException {
+    private static void serializeInternally(BinTree binTree, StringBuilder sb, Set<BinTree> visitedElems) throws BinTreeSerializationException {
         if (binTree == null) {
             sb.append("$ ");
             return;
@@ -33,12 +33,12 @@ public class BinTreeSerializerUtil {
         serializeInternally(binTree.getRight(), sb, visitedElems);
     }
 
-    private static void addToVisited(BinTree binTree, Set<String> visitedElems) {
-        visitedElems.add(binTree.getValue());
+    private static void addToVisited(BinTree binTree, Set<BinTree> visitedElems) {
+        visitedElems.add(binTree);
     }
 
-    private static boolean isAlreadyVisited(BinTree binTree, Set<String> visitedElems) {
-        return visitedElems.contains(binTree.getValue());
+    private static boolean isAlreadyVisited(BinTree binTree, Set<BinTree> visitedElems) {
+        return visitedElems.contains(binTree);
     }
 
 }
