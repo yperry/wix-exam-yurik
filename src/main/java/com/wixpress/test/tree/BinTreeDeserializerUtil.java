@@ -7,7 +7,7 @@ public class BinTreeDeserializerUtil {
     private BinTreeDeserializerUtil() {
     }
 
-    public static BinTree deserialize(String serializedString, String delim) {
+    public static BinTree deserialize(String serializedString, String delim) throws BinTreeSerializationException {
         if (isCorrectInput(serializedString)) {
             return null;
         }
@@ -20,7 +20,7 @@ public class BinTreeDeserializerUtil {
         return serializedString == null || serializedString.length() == 0;
     }
 
-    private static BinTree deserializeInternally(StringTokenizer valTokens) {
+    private static BinTree deserializeInternally(StringTokenizer valTokens) throws BinTreeSerializationException {
         if (!valTokens.hasMoreTokens()) {
             return null;
         }
