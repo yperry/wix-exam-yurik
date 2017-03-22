@@ -1,4 +1,7 @@
-package com.wixpress.test.tree;
+package com.wixpress.test.utils;
+
+import com.wixpress.test.tree.BinTree;
+import com.wixpress.test.tree.BinTreeSerializationException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +27,6 @@ public class BinTreeSerializerUtil {
             throw new BinTreeSerializationException();
         }
 
-        sb.append(binTree.getValue()).append(" ");
         addToVisited(binTree, visitedElems);
         serializeInternally(binTree.getLeft(), sb, visitedElems);
         serializeInternally(binTree.getRight(), sb, visitedElems);

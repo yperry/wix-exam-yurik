@@ -1,4 +1,7 @@
-package com.wixpress.test.tree;
+package com.wixpress.test.utils;
+
+import com.wixpress.test.tree.BinTree;
+import com.wixpress.test.tree.BinTreeSerializationException;
 
 import java.util.StringTokenizer;
 

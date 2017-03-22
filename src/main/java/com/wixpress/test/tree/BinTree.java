@@ -1,5 +1,8 @@
 package com.wixpress.test.tree;
 
+import com.wixpress.test.utils.BinTreeDeserializerUtil;
+import com.wixpress.test.utils.BinTreeSerializerUtil;
+
 public class BinTree {
     private String value;
     private BinTree left;
