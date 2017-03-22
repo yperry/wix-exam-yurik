@@ -68,7 +68,7 @@ public class BinTree {
     ///////////////////////////
 
     public String serialize() throws BinTreeSerializationException {
-        return "";
+        return BinTreeSerializerUtil.serialize(this);
     }
 
     public static BinTree deserialize(String serialized) throws BinTreeSerializationException {
