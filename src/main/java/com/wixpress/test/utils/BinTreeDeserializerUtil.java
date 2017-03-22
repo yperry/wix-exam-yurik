@@ -15,6 +15,10 @@ public class BinTreeDeserializerUtil {
             return null;
         }
 
+        if(!serializedString.contains(" $ ")) {
+            throw new BinTreeSerializationException();
+        }
+
         StringTokenizer valTokens = new StringTokenizer(serializedString, delim);
         return deserializeInternally(valTokens);
     }
