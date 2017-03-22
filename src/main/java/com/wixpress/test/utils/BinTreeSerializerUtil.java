@@ -28,6 +28,7 @@ public class BinTreeSerializerUtil {
         }
 
         addToVisited(binTree, visitedElems);
+        sb.append(binTree.getValue()).append(" ");
         serializeInternally(binTree.getLeft(), sb, visitedElems);
         serializeInternally(binTree.getRight(), sb, visitedElems);
     }
