@@ -25,9 +25,13 @@ public class BinTreeSerializerUtil {
         }
 
         sb.append(binTree.getValue()).append(" ");
-        visitedElems.add(binTree.getValue());
+        addToVisited(binTree, visitedElems);
         serializeInternally(binTree.getLeft(), sb, visitedElems);
         serializeInternally(binTree.getRight(), sb, visitedElems);
+    }
+
+    private static void addToVisited(BinTree binTree, Set<String> visitedElems) {
+        visitedElems.add(binTree.getValue());
     }
 
     private static boolean isAlreadyVisited(BinTree binTree, Set<String> visitedElems) {
