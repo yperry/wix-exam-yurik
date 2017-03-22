@@ -72,6 +72,6 @@ public class BinTree {
     }
 
     public static BinTree deserialize(String serialized) throws BinTreeSerializationException {
-        return null;
+        return BinTreeDeserializerUtil.deserialize(serialized);
     }
 }
