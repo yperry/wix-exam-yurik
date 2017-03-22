@@ -7,19 +7,29 @@ public class BinTreeDeserializerUtil {
     private BinTreeDeserializerUtil() {
     }
 
-    public static BinTree deserialize(String serializedString) {
-        if (serializedString == null || serializedString.length() == 0) {
+    public static BinTree deserialize(String serializedString, String delim) {
+        if (isCorrectInput(serializedString)) {
             return null;
         }
-        StringTokenizer valTokens = new StringTokenizer(serializedString, " ");
+
+        StringTokenizer valTokens = new StringTokenizer(serializedString, delim);
         return deserializeInternally(valTokens);
+    }
+
+    private static boolean isCorrectInput(String serializedString) {
+        return serializedString == null || serializedString.length() == 0;
     }
 
     private static BinTree deserializeInternally(StringTokenizer valTokens) {
         if (!valTokens.hasMoreTokens()) {
             return null;
         }
+
         String val = valTokens.nextToken();
+        if (val.equals("$")) {
+            return null;
+        }
+
         BinTree root = new BinTree(val);
         root.setLeft(deserializeInternally(valTokens));
         root.setRight(deserializeInternally(valTokens));

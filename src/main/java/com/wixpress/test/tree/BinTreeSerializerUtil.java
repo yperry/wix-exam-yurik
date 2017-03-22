@@ -11,10 +11,11 @@ public class BinTreeSerializerUtil {
     }
 
     private static void serializeInternally(BinTree binTree, StringBuilder sb) {
-        if(binTree == null) {
+        if (binTree == null) {
+            sb.append("$ ");
             return;
         }
-        
+
         sb.append(binTree.getValue()).append(" ");
         serializeInternally(binTree.getLeft(), sb);
         serializeInternally(binTree.getRight(), sb);
